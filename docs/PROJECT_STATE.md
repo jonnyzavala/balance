@@ -1,3 +1,8 @@
+## v0.11.0 visual design candidate — tab spectrum and environmental light
+- Main release marker {
+  "version": "0.10.1"
+}. PR #6, feature-v0.11.0-spectrum, candidate head 1d2b0b47271c2e0ec3dc9193aad0bc70864f2564. Implemented eight permanent tab hues and outline navigation icons, active tab glow, coordinated five-second daylight countdown/sun/halo glow, plus contextual environmental lighting across all sections. Morning/day/sunset/rain/night vary header, background, panel tint and selected controls while preserving tab hue and explicit theme selection. Native chrome color follows same blend; physical iPhone status area not verified. Reduced motion retained; no data or backend changes. Added tests for spectrum/animation and contextual atmosphere. Candidate must pass CI and rendered mobile review before merge. Remaining design fidelity work documented in DESIGN_ACCEPTANCE.md.
+
 ## Morning verification — 2026-11-26
 - Main remains 0.10.0. Candidate v0.10.1 visual run 45794113269 completed successfully. Reviewed 390px Today and 320px calendar screenshots: quick log now begins within the first viewport, calendar title and month controls clear sticky tabs.
 - Browser run 45794113371 ended cancelled after reporting 57 passed, 2 failed, 1 skipped. Both failures were strict locator ambiguity in the new test (two `.quick` grids, one in collapsed More moments); neither reached the new scroll assertion. Corrected test to target first grid on candidate branch in commit a1431ea2881396ec452b061a2d9f9b30b46f9d44. Fresh run required; no merge until full pass. No changes to production records, backend or Nauvis.
