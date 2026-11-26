@@ -1,5 +1,5 @@
 /* Balance offline shell. Never cache API calls, release probes or user records. */
-const CACHE='balance-shell-v0.8.0';
+const CACHE='balance-shell-v0.9.0';
 const FILES=['./','./index.html','./icon.svg','./branding/balance-emblem-v03-transparent.svg','./favicon-32.png','./apple-touch-icon.png','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
 const allowed=new Set(FILES.map(path=>new URL(path,self.registration.scope).href));
 self.addEventListener('install',event=>{
