@@ -1,0 +1,8 @@
+# Balance: continuity instructions
+Before modifying anything, read docs/PROJECT_STATE.md, docs/PRODUCT_SPEC.md, branding/README.md and the relevant source files at the current branch head. Read recent commits/changelog; verify actual implementation rather than trusting past chat claims. Treat the repository as the canonical technical record, not any individual chat.
+
+At the end of each meaningful work session, update PROJECT_STATE with actual changes, commit references or paths, verification performed, known defects, decisions and next action. Update PRODUCT_SPEC when a decision changes. Keep completed, partial, planned and blocked items distinct. Commit documentation alongside code whenever possible. Do not claim a deployment is live until checked; do not claim tests passed unless run. Avoid rewriting existing user data or unrelated projects.
+
+Keep explanations actionable and progress updates brief. Do not repeatedly request already settled requirements. Prefer implementing agreed changes and checking them rather than just proposing them. Never invent credentials or paste secrets into files. This is a public repository: do not include personal names, relationship history, medical information, therapy notes, identifying data, or private user records in code, docs, commits, issues, or fixtures. Use fictional/generic test data. User-facing mental health content is private by design. 
+
+New-chat bootstrap: inspect these files, report current state and next actionable item briefly, then resume the requested work. If docs and source differ, investigate and reconcile them. Keep the last handoff concise enough to read in a new conversation.
