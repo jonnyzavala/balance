@@ -1,0 +1,2 @@
+const {defineConfig}=require('@playwright/test');
+module.exports=defineConfig({testDir:__dirname,testMatch:'mobile.spec.cjs',timeout:45000,fullyParallel:true,workers:2,reporter:'list',use:{baseURL:'http://127.0.0.1:8080',serviceWorkers:'block',reducedMotion:'reduce'},projects:[{name:'Chromium',use:{browserName:'chromium'}},{name:'WebKit',use:{browserName:'webkit'}}],webServer:{command:'python3 -m http.server 8080 --bind 127.0.0.1',cwd:require('node:path').resolve(__dirname,'..'),url:'http://127.0.0.1:8080',reuseExistingServer:!process.env.CI}});
