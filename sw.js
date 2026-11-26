@@ -1,5 +1,5 @@
 /* Balance local app shell. Never cache API calls or user records. */
-const CACHE='balance-shell-v0.3.1';
+const CACHE='balance-shell-v0.4';
 const FILES=['./','./index.html','./icon.svg','./favicon-32.png','./apple-touch-icon.png','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
 const allowed=new Set(FILES.map(path=>new URL(path,self.registration.scope).href));
 self.addEventListener('install',event=>{
