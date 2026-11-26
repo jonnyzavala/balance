@@ -1,3 +1,9 @@
+## v0.11.0 released — 2026-11-26
+- PR #6 merged as f12af1c81ffd84019d6938280857a482651a0194 after exact candidate 71f69b7ce91edfdee1ef002eae341d8e1100647f passed browser run 45870079511 (job 140082912796): 75 passed, 1 skipped (native/WebKit offline integration deliberately excluded). Visual run 45870079431 (job 140082911853) succeeded; reviewed 390px Today, rain, rituals, adventures and 320px calendar. Earlier overflow fixed. Main marker {
+  "version": "0.11.0"
+}. Pages delivery and physical iPhone standalone not independently verified. No backend or Nauvis modifications.
+- Full implemented feature list in candidate entry immediately below. Remaining: richer island artwork and distinct achievement art, further visual refinement from actual phone usage, optional in-app gaming reminder behavior (current wind-down calculation only), sensitive mood/energy/anxiety tracking and Sanctuary after privacy architecture, separate restricted partner access, AI inbox extraction and native Health/calendar integrations. Existing ordinary Her World notes are owner-device synced; do not enter sensitive information. No promise of native notifications.
+
 ## v0.11.0 design implementation — current candidate
 - PR #6, feature-v0.11.0-spectrum, candidate head 71f69b7ce91edfdee1ef002eae341d8e1100647f. Main remains v0.10.1 until CI passes. Actual implementation in index.html, not just design notes.
 - Stable ordered eight-tab spectrum, outline navigation and activity icons, time/weather ambient light on all tabs, coordinated five-second daylight glow, rain-window art, warm bulbs and steam. Reduced motion retained.
