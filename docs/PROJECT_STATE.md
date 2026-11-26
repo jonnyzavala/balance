@@ -1,3 +1,7 @@
+## v0.6.1 — Header navigation and visual direction
+- Settings is now a gear button in the main header, removed from primary tabs. Active indication and pre-onboarding disabled state; opens existing Settings view. Commit c2ba06a39cbb979af22405aecfce243a00e6d98f; three simulated navigation checks passed. Cache version bumped. No schema or data changes. Actual live rendering pending.
+- User confirmed current visual layout is placeholder; full cohesive redesign is a major upcoming phase. See PRODUCT_SPEC.md. Preserve existing data and capabilities. Prioritize Today hierarchy and atmosphere, mobile/desktop layout, navigation consolidation, pixel world and meaningful visual feedback; avoid further isolated cosmetic churn unless needed for usability.
+
 ## v0.6 — 2026-11-26
 - User reports successful joining in v0.5, but confirmation was unclear until dialog closed; requests persistent key and smaller laptop controls.
 - Deployed Balance-only migration balance_reusable_owner_recovery_key, archived database/balance_reusable_owner_recovery_key.sql (08bdd6e718d4f718a4783abe3d2c60d0e900e88e). Adds unique hashed reusable owner credential, join by either code type, rotation/disable and automatic key/all invite invalidation upon device revocation. No existing workspace data overwritten.
