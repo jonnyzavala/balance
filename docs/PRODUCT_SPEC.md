@@ -56,3 +56,6 @@ Exercise touch-profile phone emulation and rotation with an open menu in Chromiu
 
 ## Calendar and adventure inbox (v0.10.0)
 Expandable responsive month calendar in Adventures and History, with plan and moment markers, day selection, plan prefill and exact-day history filtering. Inbox items can be edited, marked ready, associated with an existing plan, and remembered on completion; only explicit HTTP(S) links open externally. No automatic link content extraction or calendar account access. Optional estimated plan minutes must not become actual logged minutes. Timed iCalendar export uses local floating times, optional duration, safe escaping/folding; all-day export has no timed duration.
+
+## Island and feedback refinement (v0.12 candidate)
+Five original pixel scenes, nine milestone discoveries, layered environmental animation, framed collectible medals. Original synthesized confirmation sounds and explicit tap-to-play filtered rain noise; device-local volume and optional vibration, no autoplay or background ambience. In-app wind-down prompt uses the selected evening's weekday and local clock, including midnight crossover; log once or dismiss, no native notification guarantee. Existing synced data remains compatible in new client; new scene IDs require updated paired clients. Sensitive data and restricted partner access remain security-gated.
