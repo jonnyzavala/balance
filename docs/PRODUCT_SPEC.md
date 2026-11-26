@@ -53,3 +53,6 @@ Original SVG pixel garden, shore and campfire with permanent unlocks, optional c
 
 ## Mobile regression expansion (v0.9.1)
 Exercise touch-profile phone emulation and rotation with an open menu in Chromium and WebKit. Chromium service-worker offline reload retains fictional locally saved events; physical iOS installed-app offline acceptance remains required. Optional daylight and rain suggestion filters use current city/manual daylight context and estimated durations, never a guarantee of safe travel. Plan the exact displayed suggestion rather than recomputing the selected item during the click. City search and paired recovery tested using mocked provider responses; no real credentials or personal records.
+
+## Calendar and adventure inbox (v0.10.0)
+Expandable responsive month calendar in Adventures and History, with plan and moment markers, day selection, plan prefill and exact-day history filtering. Inbox items can be edited, marked ready, associated with an existing plan, and remembered on completion; only explicit HTTP(S) links open externally. No automatic link content extraction or calendar account access. Optional estimated plan minutes must not become actual logged minutes. Timed iCalendar export uses local floating times, optional duration, safe escaping/folding; all-day export has no timed duration.
