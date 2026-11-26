@@ -1,0 +1,53 @@
+name: Mobile visual snapshots
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/mobile-visual.yml'
+      - 'index.html'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  snapshots:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save --no-package-lock --no-audit --no-fund @playwright/test@1.51.1
+      - run: npx playwright install --with-deps webkit
+      - name: Capture fictional phone screens
+        shell: bash
+        run: |
+          python3 -m http.server 8080 --bind 127.0.0.1 >/tmp/balance-visual-server.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          for i in {1..20}; do curl -fsS http://127.0.0.1:8080/release.json >/dev/null && break; sleep 1; done
+          node <<'NODE'
+          const {webkit,devices}=require('@playwright/test');
+          const fs=require('node:fs');
+          const base='http://127.0.0.1:8080';
+          const day=new Date().toISOString().slice(0,10);
+          const fixture={profile:{name:'Demo',partner:'Companion',brand:'Balance'},log:[{id:'log1',name:'Read together',cat:'Connection',day},{id:'log2',name:'Outside time',cat:'Foundation',day,duration:25}],rituals:[{id:'r1',name:'A small surprise',interval:7}],routines:[{id:'routine1',name:'Open blinds',level:'recovery'},{id:'routine2',name:'Movement',level:'reduced'}],responsibilities:[{id:'h1',name:'Fresh groceries',stage:2,repeat:7}],ideas:[{id:'i1',link:'https://example.org/outing',note:'A nearby park',stage:'ready'}],plans:[{id:'p1',name:'Coffee walk',day,time:'15:00',duration:30}],sleep:[{day,onset:'23:00',wake:'07:00'}]};
+          (async()=>{const browser=await webkit.launch();fs.mkdirSync('mobile-snapshots',{recursive:true});try{
+          for(const [theme,width,height] of [['light',390,844],['dark',390,844],['light',320,568]]){
+            const context=await browser.newContext({...devices['iPhone 13'],viewport:{width,height},screen:{width,height},deviceScaleFactor:1,serviceWorkers:'block',reducedMotion:'reduce'});
+            await context.route('**/*',r=>r.request().url().startsWith(base+'/')?r.continue():r.abort());
+            await context.addInitScript(({fixture,theme})=>{localStorage.setItem('balance-local-v01',JSON.stringify({...fixture,mode:theme==='dark'?'night':'morning'}));localStorage.setItem('balance-appearance-v1',theme);localStorage.setItem('balance-launch-intro-v1','off')},{fixture,theme});
+            const page=await context.newPage();await page.goto(base+'/');await page.locator('#view').waitFor();
+            async function shot(name){await page.evaluate(()=>window.scrollTo(0,0));const b=await page.screenshot({type:'jpeg',quality:72,animations:'disabled',path:'mobile-snapshots/'+name+'.jpg'});const v=b.toString('base64');for(let p=0,i=0;p<v.length;p+=2500,i++)console.log('BALANCE_SCREEN:'+name+':'+i+':'+v.slice(p,p+2500))}
+            await shot('today-'+theme+'-'+width);
+            if(width===390&&theme==='light'){await page.locator('#nav').getByRole('button',{name:'Foundation',exact:true}).tap();await shot('foundation-light-390');await page.locator('#nav').getByRole('button',{name:'Our world',exact:true}).tap();await shot('world-light-390');await page.locator('#appearanceButton').tap();await shot('appearance-light-390');await page.locator('#appearanceDialog .menu-close').tap();await page.locator('#syncStatus').tap();await shot('sync-light-390')}
+            if(width===320){await page.locator('#nav').getByRole('button',{name:'Adventures',exact:true}).tap();await page.locator('.calendar-panel summary').tap();await page.locator('.calendar-panel').scrollIntoViewIfNeeded();const b=await page.locator('.calendar-panel').screenshot({type:'jpeg',quality:72,path:'mobile-snapshots/calendar-light-320.jpg'});const v=b.toString('base64');for(let p=0,i=0;p<v.length;p+=2500,i++)console.log('BALANCE_SCREEN:calendar-light-320:'+i+':'+v.slice(p,p+2500))}
+            await context.close()
+          }}finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1});
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mobile-visual-snapshots
+          path: mobile-snapshots/
+          retention-days: 7
