@@ -50,3 +50,6 @@ In-memory drafts survive tab switches, appearance changes and rerenders; keep un
 
 ## Island, daily experience and recovery (v0.9.0)
 Original SVG pixel garden, shore and campfire with permanent unlocks, optional companion, configurable outfits/motion and PNG export. Compact daily overview, optional activity minutes, editable routines and recurrence, adjustable ritual snooze. Distinct partner bedtime, joined, sleep onset, wake and rise; descriptive period charts exclude missing estimates. Backup restore validates records before explicit replacement, rejects corrupt files and pauses saves/sync on unreadable local storage until recovery. See RELEASE_GATES.md for mobile and privacy acceptance.
+
+## Mobile regression expansion (v0.9.1)
+Exercise touch-profile phone emulation and rotation with an open menu in Chromium and WebKit. Chromium service-worker offline reload retains fictional locally saved events; physical iOS installed-app offline acceptance remains required. Optional daylight and rain suggestion filters use current city/manual daylight context and estimated durations, never a guarantee of safe travel. Plan the exact displayed suggestion rather than recomputing the selected item during the click. City search and paired recovery tested using mocked provider responses; no real credentials or personal records.
