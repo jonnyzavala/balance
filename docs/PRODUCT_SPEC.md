@@ -65,3 +65,6 @@ Replace the mandatory Notice/Anticipate/Plan/Execute/Close loop workflow with on
 
 ## Household calendar (v0.12.2 candidate)
 Dated home tasks and next recurring dates appear alongside adventures and remembered moments in both calendar views, with distinct teal square markers and navigation to the actual task. No duplicate plan entries. Undated tasks remain in checklist; recurrence is calculated from actual completion, so show only next occurrence, not speculative future dates.
+
+## Exception days (v0.12.3 candidate)
+Support inclusive date ranges and calendar toggles for days normal routines do not apply. Preserve actual activity and sleep logs, dated household obligations and usual preferences. Pause daily intentions, foundation checklist, Today ritual suggestions and wind-down prompts; no missed-day penalty. Exclude exception days from weekly routine frequency denominator, visibly mark exception nights without altering measured sleep, and automatically resume normal expectations after the range. No private narrative required.
