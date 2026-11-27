@@ -1,3 +1,7 @@
+## v0.12.1 — Our Home simplification candidate
+- PR #8 head 9870309da35ef8d49bdd86725fe354c24263312d. Replaced five mandatory stages in the UI with one-tap Handled, Ready to handle / Coming up / Handled sections, optional plan date and repeat interval, counts and undo. Legacy stage 0–4 interpreted as ready, stage 5 and history preserved; recurrence automatically becomes ready on its next date. Today shares one completion event, no intermediate steps. Optional planned field validated; no new top-level synced keys or backend changes. 20 simulated checks passed, including legacy, recurrence, one-tap and all eight tabs. Added browser tests; candidate not merged pending results.
+- v0.12.0 released: PR #7 merged as 2b5c3a7f2dd83347f3cb66feebebe2a57538607c after run 45881350530 job 140121191544 succeeded with 81 passed, 1 skipped, and visual run 45881350479 succeeded. Native iPhone and public Pages delivery not verified. No user data or Nauvis changes.
+
 ## v0.12.0 — island, sound and wind-down candidate (2026-11-26)
 - PR #7, branch feature-v0.12.0-island, head 7453dff9678b7aba8ebc21db34039c0736e9b3f2. Main remains 0.11.0 until browser regression passes.
 - b0eae5108e2bd20fc5877e4f3221752dd7fc380a: original pixel landscape refinements, enhanced avatars, clouds, water, fire and fireflies; two more unlockable scenes (Lantern Tea House from jasmine, Cloud Lookout from ship-log); nine discovery entries and earned details; reduced-motion behavior. Existing awards remain permanent.
