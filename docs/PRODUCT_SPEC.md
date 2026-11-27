@@ -59,3 +59,6 @@ Expandable responsive month calendar in Adventures and History, with plan and mo
 
 ## Island and feedback refinement (v0.12 candidate)
 Five original pixel scenes, nine milestone discoveries, layered environmental animation, framed collectible medals. Original synthesized confirmation sounds and explicit tap-to-play filtered rain noise; device-local volume and optional vibration, no autoplay or background ambience. In-app wind-down prompt uses the selected evening's weekday and local clock, including midnight crossover; log once or dismiss, no native notification guarantee. Existing synced data remains compatible in new client; new scene IDs require updated paired clients. Sensitive data and restricted partner access remain security-gated.
+
+## Our Home usability correction (v0.12.1 candidate)
+Replace the mandatory Notice/Anticipate/Plan/Execute/Close loop workflow with one-tap Handled, optional planned date and repeat interval. Group ready tasks, upcoming dates and handled one-time tasks. Existing incomplete stage 0–4 records are simply ready (unless scheduled for later); stage 5 and recurrence dates are retained. Completion logs once, schedules next recurrence and is shared with Today. Existing undo available; no additional responsibility score. Preserve the philosophy of initiative without demanding documentation of each mental step.
