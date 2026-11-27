@@ -62,3 +62,6 @@ Five original pixel scenes, nine milestone discoveries, layered environmental an
 
 ## Our Home usability correction (v0.12.1 candidate)
 Replace the mandatory Notice/Anticipate/Plan/Execute/Close loop workflow with one-tap Handled, optional planned date and repeat interval. Group ready tasks, upcoming dates and handled one-time tasks. Existing incomplete stage 0–4 records are simply ready (unless scheduled for later); stage 5 and recurrence dates are retained. Completion logs once, schedules next recurrence and is shared with Today. Existing undo available; no additional responsibility score. Preserve the philosophy of initiative without demanding documentation of each mental step.
+
+## Household calendar (v0.12.2 candidate)
+Dated home tasks and next recurring dates appear alongside adventures and remembered moments in both calendar views, with distinct teal square markers and navigation to the actual task. No duplicate plan entries. Undated tasks remain in checklist; recurrence is calculated from actual completion, so show only next occurrence, not speculative future dates.
